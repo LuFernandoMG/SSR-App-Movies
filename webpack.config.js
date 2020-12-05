@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CompressionWebpackPlugin = require('compression-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-const ManifestPlugin = require('webpack-manifest-plugin');
+const WebpackManifestPlugin = require('webpack-manifest-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 require('dotenv').config();
@@ -99,7 +99,7 @@ module.exports = {
         filename: '[path][base].gz',
       }),
     isDev ? () => { } :
-      new ManifestPlugin(),
+      new WebpackManifestPlugin(),
     isDev ? () => { } :
       new CleanWebpackPlugin({
         cleanOnceBeforeBuildPatterns: path.resolve(__dirname, 'src/server/public'),
