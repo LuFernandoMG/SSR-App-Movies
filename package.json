@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "12.16.x"
+  },
   "scripts": {
     "build": "webpack-cli --config webpack.config.js",
     "start:dev": "nodemon src/server/index",
